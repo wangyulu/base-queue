@@ -43,4 +43,16 @@ class BaseListener
         $queue->last_status = QueueModel::STATUS_SUCC;
         $queue->save();
     }
+
+    public function setQueueStatusToFail(QueueModel $queue)
+    {
+        $queue->last_status = QueueModel::STATUS_FAIL;
+        $queue->save();
+    }
+
+    public function setQueueStatusToExcep(QueueModel $queue)
+    {
+        $queue->last_status = QueueModel::STATUS_EXCEP;
+        $queue->save();
+    }
 }

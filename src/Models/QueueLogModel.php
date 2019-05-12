@@ -20,6 +20,7 @@ class QueueLogModel extends Model
         'queue_id',
         'queue_uuid',
         'execution_time',
-        'status'
+        'status',
+        'err'
     ];
 }

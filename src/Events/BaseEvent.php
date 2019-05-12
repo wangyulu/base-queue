@@ -14,11 +14,18 @@ class BaseEvent
 
     public $body;
 
+    public $excep;
+
     public function __construct($event)
     {
-        $this->job = $event->job;
+        if (property_exists($event, 'job')) {
+            $this->job  = $event->job;
+            $this->body = json_decode($event->job->getRawBody(), true);
+        }
 
-        $this->body = json_decode($event->job->getRawBody(), true);
+        if (property_exists($event, 'exception')) {
+            $this->excep = $event->exception;
+        }
     }
 
     public function getClassName()
