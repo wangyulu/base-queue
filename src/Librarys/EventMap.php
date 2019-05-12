@@ -28,5 +28,14 @@ trait EventMap
         'Sky\BaseQueue\Events\QueueFailEvent'   => [
             'Sky\BaseQueue\Listeners\QueueFailListener',
         ],
+        'Sky\BaseQueue\Events\QueueExcepEvent'  => [
+            'Sky\BaseQueue\Listeners\QueueExcepListener',
+        ],
+        'Sky\BaseQueue\Events\QueueLoopEvent'   => [
+            'Sky\BaseQueue\Listeners\QueueLoopListener',
+        ],
+        'Sky\BaseQueue\Events\QueueStopEvent'   => [
+            'Sky\BaseQueue\Listeners\QueueStopListener',
+        ],
     ];
 }

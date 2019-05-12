@@ -9,6 +9,9 @@
 namespace Sky\BaseQueue\Providers;
 
 use Log;
+use Sky\BaseQueue\Events\QueueExcepEvent;
+use Sky\BaseQueue\Events\QueueLoopEvent;
+use Sky\BaseQueue\Events\QueueStopEvent;
 use Sky\BaseQueue\Librarys\EventMap;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Bus\BusServiceProvider;
@@ -118,11 +121,19 @@ class AdapterBusServiceProvider extends BusServiceProvider
         });
 
         $this->app['queue']->exceptionOccurred(function ($event) {
-            event(new QueueFailEvent($event));
+            event(new QueueExcepEvent($event));
         });
 
         $this->app['queue']->failing(function ($event) {
             event(new QueueFailEvent($event));
+        });
+
+        $this->app['queue']->looping(function ($event) {
+            event(new QueueLoopEvent($event));
+        });
+
+        $this->app['queue']->stopping(function ($event) {
+            event(new QueueStopEvent($event));
         });
     }
 
