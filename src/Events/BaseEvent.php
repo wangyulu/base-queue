@@ -6,7 +6,7 @@
  * Time: 17:37
  */
 
-namespace Lxk\BaseQueue\Events;
+namespace Sky\BaseQueue\Events;
 
 class BaseEvent
 {

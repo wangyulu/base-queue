@@ -6,7 +6,7 @@
  * Time: 10:49
  */
 
-namespace Lxk\BaseQueue\Events;
+namespace Sky\BaseQueue\Events;
 
 use App\Jobs\Job;
 

@@ -6,7 +6,7 @@
  * Time: 15:33
  */
 
-namespace Lxk\BaseQueue\Events;
+namespace Sky\BaseQueue\Events;
 
 class QueueStartEvent extends BaseEvent
 {

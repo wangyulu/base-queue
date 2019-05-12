@@ -6,9 +6,9 @@
  * Time: 15:18
  */
 
-namespace Lxk\BaseQueue\Http\Controllers\V1_0\Test;
+namespace Sky\BaseQueue\Http\Controllers\V1_0\Test;
 
-use Lxk\BaseQueue\Jobs\TestSendSms;
+use Sky\BaseQueue\Jobs\TestSendSms;
 use App\Http\Controllers\Controller;
 
 class QueueController extends Controller

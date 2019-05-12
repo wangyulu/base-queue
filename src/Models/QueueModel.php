@@ -6,7 +6,7 @@
  * Time: 11:27
  */
 
-namespace Lxk\BaseQueue\Models;
+namespace Sky\BaseQueue\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

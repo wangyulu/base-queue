@@ -6,7 +6,7 @@
  * Time: 10:51
  */
 
-namespace Lxk\BaseQueue\Bll;
+namespace Sky\BaseQueue\Bll;
 
 class QueueBll
 {

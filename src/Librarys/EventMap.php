@@ -6,7 +6,7 @@
  * Time: 14:14
  */
 
-namespace Lxk\BaseQueue\Librarys;
+namespace Sky\BaseQueue\Librarys;
 
 trait EventMap
 {
@@ -16,17 +16,17 @@ trait EventMap
      * @var array
      */
     protected $listen = [
-        'Lxk\BaseQueue\Events\QueueCreateEvent' => [
-            'Lxk\BaseQueue\Listeners\QueueCreateListener',
+        'Sky\BaseQueue\Events\QueueCreateEvent' => [
+            'Sky\BaseQueue\Listeners\QueueCreateListener',
         ],
-        'Lxk\BaseQueue\Events\QueueStartEvent'  => [
-            'Lxk\BaseQueue\Listeners\QueueStartListener',
+        'Sky\BaseQueue\Events\QueueStartEvent'  => [
+            'Sky\BaseQueue\Listeners\QueueStartListener',
         ],
-        'Lxk\BaseQueue\Events\QueueEndEvent'    => [
-            'Lxk\BaseQueue\Listeners\QueueEndListener',
+        'Sky\BaseQueue\Events\QueueEndEvent'    => [
+            'Sky\BaseQueue\Listeners\QueueEndListener',
         ],
-        'Lxk\BaseQueue\Events\QueueFailEvent'   => [
-            'Lxk\BaseQueue\Listeners\QueueFailListener',
+        'Sky\BaseQueue\Events\QueueFailEvent'   => [
+            'Sky\BaseQueue\Listeners\QueueFailListener',
         ],
     ];
 }

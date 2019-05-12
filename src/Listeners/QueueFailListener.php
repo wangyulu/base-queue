@@ -6,10 +6,10 @@
  * Time: 15:43
  */
 
-namespace Lxk\BaseQueue\Listeners;
+namespace Sky\BaseQueue\Listeners;
 
 use Log;
-use Lxk\BaseQueue\Events\QueueFailEvent;
+use Sky\BaseQueue\Events\QueueFailEvent;
 
 class QueueFailListener extends BaseListener
 {

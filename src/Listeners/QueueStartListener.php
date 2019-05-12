@@ -6,12 +6,12 @@
  * Time: 15:42
  */
 
-namespace Lxk\BaseQueue\Listeners;
+namespace Sky\BaseQueue\Listeners;
 
 use Log;
-use Lxk\BaseQueue\Models\QueueModel;
-use Lxk\BaseQueue\Models\QueueLogModel;
-use Lxk\BaseQueue\Events\QueueStartEvent;
+use Sky\BaseQueue\Models\QueueModel;
+use Sky\BaseQueue\Models\QueueLogModel;
+use Sky\BaseQueue\Events\QueueStartEvent;
 
 class QueueStartListener extends BaseListener
 {

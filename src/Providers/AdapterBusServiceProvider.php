@@ -6,17 +6,17 @@
  * Time: 14:01
  */
 
-namespace Lxk\BaseQueue\Providers;
+namespace Sky\BaseQueue\Providers;
 
 use Log;
-use Lxk\BaseQueue\Librarys\EventMap;
+use Sky\BaseQueue\Librarys\EventMap;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Bus\BusServiceProvider;
-use Lxk\BaseQueue\Events\QueueEndEvent;
-use Lxk\BaseQueue\Events\QueueFailEvent;
-use Lxk\BaseQueue\Events\QueueStartEvent;
+use Sky\BaseQueue\Events\QueueEndEvent;
+use Sky\BaseQueue\Events\QueueFailEvent;
+use Sky\BaseQueue\Events\QueueStartEvent;
 use Illuminate\Contracts\Events\Dispatcher;
-use Lxk\BaseQueue\Librarys\AdapterDispatcher;
+use Sky\BaseQueue\Librarys\AdapterDispatcher;
 use Illuminate\Contracts\Bus\Dispatcher as DispatcherContract;
 use Illuminate\Contracts\Queue\Factory as QueueFactoryContract;
 use Illuminate\Contracts\Bus\QueueingDispatcher as QueueingDispatcherContract;
@@ -135,7 +135,7 @@ class AdapterBusServiceProvider extends BusServiceProvider
     {
         Route::group([
             'prefix'    => config('que.path'),
-            'namespace' => 'Lxk\BaseQueue\Http\Controllers',
+            'namespace' => 'Sky\BaseQueue\Http\Controllers',
         ], function () {
             require __DIR__ . '/../../routes/web.php';
         });

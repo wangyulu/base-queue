@@ -6,7 +6,7 @@
  * Time: 15:41
  */
 
-namespace Lxk\BaseQueue\Events;
+namespace Sky\BaseQueue\Events;
 
 class QueueFailEvent extends BaseEvent
 {

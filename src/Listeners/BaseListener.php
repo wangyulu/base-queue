@@ -6,9 +6,9 @@
  * Time: 14:45
  */
 
-namespace Lxk\BaseQueue\Listeners;
+namespace Sky\BaseQueue\Listeners;
 
-use Lxk\BaseQueue\Models\QueueModel;
+use Sky\BaseQueue\Models\QueueModel;
 
 class BaseListener
 {

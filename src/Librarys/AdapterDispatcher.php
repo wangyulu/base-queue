@@ -6,11 +6,11 @@
  * Time: 14:49
  */
 
-namespace Lxk\BaseQueue\Librarys;
+namespace Sky\BaseQueue\Librarys;
 
 use Log;
 use Illuminate\Bus\Dispatcher;
-use Lxk\BaseQueue\Events\QueueCreateEvent;
+use Sky\BaseQueue\Events\QueueCreateEvent;
 
 class AdapterDispatcher extends Dispatcher
 {
