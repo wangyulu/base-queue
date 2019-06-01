@@ -30,4 +30,21 @@ class QueueModel extends Model
     const STATUS_SUCC  = 2;
     const STATUS_FAIL  = 3;
     const STATUS_EXCEP = 4;
+
+    const STATUS_WAIT_CODE  = 'wait';
+    const STATUS_RUN_CODE   = 'run';
+    const STATUS_SUCC_CODE  = 'succ';
+    const STATUS_FAIL_CODE  = 'fail';
+    const STATUS_EXCEP_CODE = 'excep';
+
+    public static function getStatusCode()
+    {
+        return [
+            self::STATUS_WAIT  => self::STATUS_WAIT_CODE,
+            self::STATUS_RUN   => self::STATUS_RUN_CODE,
+            self::STATUS_SUCC  => self::STATUS_SUCC_CODE,
+            self::STATUS_FAIL  => self::STATUS_FAIL_CODE,
+            self::STATUS_EXCEP => self::STATUS_EXCEP_CODE,
+        ];
+    }
 }

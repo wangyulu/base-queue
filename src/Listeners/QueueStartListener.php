@@ -38,14 +38,4 @@ class QueueStartListener extends BaseListener
 
         Log::info('【start】', [get_class($event), $event->job]);
     }
-
-    public function getJob()
-    {
-
-    }
-
-    public function parse()
-    {
-
-    }
 }

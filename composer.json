@@ -18,12 +18,5 @@
     },
     "require": {
         "php": ">=7.1.14"
-    },
-    "repositories": [
-        {
-            "name": "sky/base-queue",
-            "type": "vcs",
-            "url": "git@github.com:wangyulu/base-queue.git"
-        }
-    ]
+    }
 }

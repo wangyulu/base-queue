@@ -9,15 +9,17 @@
 namespace Sky\BaseQueue\Providers;
 
 use Log;
-use Sky\BaseQueue\Events\QueueExcepEvent;
-use Sky\BaseQueue\Events\QueueLoopEvent;
-use Sky\BaseQueue\Events\QueueStopEvent;
+use Sky\BaseQueue\Models\QueueModel;
 use Sky\BaseQueue\Librarys\EventMap;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Bus\BusServiceProvider;
 use Sky\BaseQueue\Events\QueueEndEvent;
 use Sky\BaseQueue\Events\QueueFailEvent;
+use Sky\BaseQueue\Events\QueueStopEvent;
+use Sky\BaseQueue\Events\QueueLoopEvent;
 use Sky\BaseQueue\Events\QueueStartEvent;
+use Sky\BaseQueue\Events\QueueExcepEvent;
+use Sky\BaseQueue\Observer\QueueObserver;
 use Illuminate\Contracts\Events\Dispatcher;
 use Sky\BaseQueue\Librarys\AdapterDispatcher;
 use Illuminate\Contracts\Bus\Dispatcher as DispatcherContract;
@@ -47,6 +49,7 @@ class AdapterBusServiceProvider extends BusServiceProvider
         $this->registerEvents();
         $this->registerListener();
         $this->registerRoutes();
+        $this->registerObserver();
     }
 
     public function overload()
@@ -150,5 +153,10 @@ class AdapterBusServiceProvider extends BusServiceProvider
         ], function () {
             require __DIR__ . '/../../routes/web.php';
         });
+    }
+
+    protected function registerObserver()
+    {
+        QueueModel::observe(QueueObserver::class);
     }
 }

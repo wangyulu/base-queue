@@ -29,6 +29,5 @@ class QueueCreateListener extends BaseListener
         ];
 
         $query->updateOrCreate(array_only($data, 'class_name'), $data);
-
     }
 }
