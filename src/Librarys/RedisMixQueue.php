@@ -22,7 +22,9 @@ class RedisMixQueue extends RedisQueue
      */
     protected function createPayloadArray($job, $data = '')
     {
-        $ext = blank($_SERVER['HTTP_X_TRACE_ID']) ? [] : ['HTTP_X_TRACE_ID' => $_SERVER['HTTP_X_TRACE_ID']];
+        $ext = isset($_SERVER['HTTP_X_TRACE_ID'])
+            ? blank($_SERVER['HTTP_X_TRACE_ID']) ? [] : ['HTTP_X_TRACE_ID' => $_SERVER['HTTP_X_TRACE_ID']]
+            : [];
         return empty($ext)
             ? parent::createPayloadArray($job, $data)
             : array_merge(parent::createPayloadArray($job, $data), $ext);
