@@ -27,7 +27,7 @@ composer -vvv require illuminate/redis:^5.6
 1.2 在项目根目录执行
 
 ```
-composer -vv require sky/base-queue:dev-master
+composer -vvv require sky/base-queue:dev-master
 ```
 
 - 添加ENV配置
@@ -88,3 +88,28 @@ $app->singleton(Illuminate\Contracts\Bus\Dispatcher::class,
 $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(\Sky\BaseQueue\Providers\AdapterBusServiceProvider::class);
 ```
+
+- 更新记录
+
+    - 2019-09-28
+
+        添加redis_mix扩展，支持自定义payload参数
+    
+        - 队列ENV配置 
+    
+            ```
+            # 指定队列所使用的Redis实体
+            QUEUE_REDIS_MIX_CONNECTION=queue
+            ```
+            
+        - 队列文件配置（config/queue.php）
+        
+            ```
+            // 新增
+            'redis_mix' => [
+                'driver' => 'redis_mix',
+                'connection' => env('QUEUE_REDIS_MIX_CONNECTION', 'default'),
+                'queue' => 'default',
+                'retry_after' => 60,
+            ],
+            ```
